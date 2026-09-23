@@ -1,0 +1,10 @@
+name: shortest-route
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - flask
+  - osmnx
+  - python-dotenv
+  - pytest
+

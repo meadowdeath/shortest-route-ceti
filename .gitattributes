@@ -1,0 +1,21 @@
+# Normalize text files while preserving their repository line endings.
+* text=auto
+
+# Keep source and configuration files consistent across operating systems.
+*.py text eol=lf
+*.js text eol=lf
+*.css text eol=lf
+*.html text eol=lf
+*.md text eol=lf
+*.toml text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.txt text eol=lf
+
+# Treat generated graph data and common media as binary assets.
+*.graphml binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.svg text eol=lf
