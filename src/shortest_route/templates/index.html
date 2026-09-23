@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ruta más corta a CETI Colomos</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+  <main class="page-container">
+    <h1>Ruta más corta a CETI Colomos</h1>
+    <section id="map" aria-label="Mapa de la ruta"></section>
+    <section class="controls" aria-label="Controles de ruta">
+      <button type="button" id="dijkstra-button">Dijkstra</button>
+      <button type="button" id="astar-button">A*</button>
+      <button type="button" id="reset-button">Reiniciar</button>
+    </section>
+    <section id="route-status" aria-live="polite"></section>
+  </main>
+  <script>
+    window.mapConfiguration = {{ {
+      "origin": {"lat": origin_lat, "lng": origin_lng},
+      "destination": {"lat": destination_lat, "lng": destination_lng}
+    } | tojson }};
+  </script>
+  <script src="{{ url_for('static', filename='js/map.js') }}"></script>
+  <script
+    async
+    src="https://maps.googleapis.com/maps/api/js?key={{ google_maps_api_key | urlencode }}&loading=async&callback=initializeMap&libraries=marker">
+  </script>
+</body>
+</html>
